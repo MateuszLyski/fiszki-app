@@ -67,16 +67,16 @@ button:focus-visible {
   }
 }
 .slide-in-right {
-  animation: slideInRight 0.6s ease forwards;
+  animation: slideInRight 0.8s ease forwards;
 }
 .slide-in-left {
-  animation: slideInLeft 0.6s ease forwards;
+  animation: slideInLeft 0.8s ease forwards;
 }
 .slide-out-right {
-  animation: slideOutRight 0.6s ease forwards;
+  animation: slideOutRight 0.8s ease forwards;
 }
 .slide-out-left {
-  animation: slideOutLeft 0.6s ease forwards;
+  animation: slideOutLeft 0.8s ease forwards;
 }
 
 @keyframes slideInRight {

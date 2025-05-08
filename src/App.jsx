@@ -88,14 +88,15 @@ function App() {
 }
 
 const containerStyle = {
-  minHeight: 'calc(100vh - 80px)',
+  minHeight: 'calc(100vh - 80px)', // pełna wysokość poniżej navbaru
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
   gap: '1.5rem',
   margin: 0,
-  overflow: 'hidden'
+  overflow: 'hidden',
+  padding: '2rem'
 };
 
 const buttonStyle = {
