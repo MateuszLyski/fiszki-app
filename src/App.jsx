@@ -88,7 +88,7 @@ function App() {
 }
 
 const containerStyle = {
-  minHeight: 'calc(100vh - 80px)', // pełna wysokość poniżej navbaru
+  minHeight: 'calc(100vh - 80px)',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -96,7 +96,8 @@ const containerStyle = {
   gap: '1.5rem',
   margin: 0,
   overflow: 'hidden',
-  padding: '2rem'
+  maxWidth: '100vw',
+  padding: '1rem'
 };
 
 const buttonStyle = {

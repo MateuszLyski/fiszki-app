@@ -9,8 +9,10 @@ export default function Flashcard({ question, answer, flipped = false, className
       className={className}
       style={{
         width: '100%',
-        height: '100%',
+        maxWidth: '400px',
+        height: '250px',
         perspective: '1000px',
+        cursor: 'pointer',
         position: 'absolute',
         top: 0,
         left: 0

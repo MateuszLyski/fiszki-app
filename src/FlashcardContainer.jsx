@@ -13,7 +13,13 @@ export default function FlashcardContainer({ question, answer, direction }) {
   }, [question, answer, direction]);
 
   return (
-    <div style={{ position: 'relative', width: '400px', height: '250px' }}>
+    <div style={{
+        position: 'relative',
+        width: '100%',
+        maxWidth: '400px',
+        height: '250px',
+        overflow: 'hidden'
+    }}>
       {prevCard && (
         <Flashcard
           key={prevCard.question}
