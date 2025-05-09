@@ -6,13 +6,13 @@ import FlashcardContainer from './FlashcardContainer';
 import europa from './data/europe.json';
 import azja from './data/asia.json';
 import ameryka from './data/america.json';
-import dlugi from './data/dlugie.json';
+import długie from './data/dlugie.json';
 
 const allSets = {
   europa,
   azja,
   ameryka,
-  dlugi
+  długie
 };
 
 function App() {
@@ -71,7 +71,7 @@ function App() {
               direction={direction}
             />
 
-            <div style={{ display: 'flex', gap: '1rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
               <button onClick={prevCard} disabled={index === 0}
                 style={{ ...buttonStyle, opacity: index === 0 ? 0.5 : 1 }}>
                 Poprzednia

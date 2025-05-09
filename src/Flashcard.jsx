@@ -10,7 +10,7 @@ export default function Flashcard({ question, answer, flipped = false, className
       style={{
         width: '100%',
         maxWidth: '400px',
-        height: '250px',
+        height: '480px',
         perspective: '1000px',
         cursor: 'pointer',
         position: 'absolute',
@@ -49,18 +49,21 @@ const cardFaceStyle = {
   position: 'absolute',
   width: '100%',
   height: '100%',
-  boxSizing: 'border-box',
-  backfaceVisibility: 'hidden',
-  backgroundColor: '#ffffff',
-  color: '#000000',
-  border: '2px solid #cccccc',
   borderRadius: '12px',
+  backgroundColor: '#e8f5e9',
+  boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  fontSize: '1.6rem',
+  backfaceVisibility: 'hidden',
   padding: '1rem',
   textAlign: 'center',
-  top: 0,
-  left: 0
+  lineHeight: '1.4',
+  fontSize: '1.25rem',
+  boxSizing: 'border-box',
+  overflowWrap: 'break-word',
+  wordBreak: 'break-word',
+  whiteSpace: 'pre-wrap',
+  color: '#000000' // ← dodaj to
 };
+
