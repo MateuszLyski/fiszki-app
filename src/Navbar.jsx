@@ -1,5 +1,5 @@
 export default function Navbar({ currentSet, onSelect }) {
-  const sets = ['Europa', 'Azja', 'Ameryka'];
+  const sets = ['Europa', 'Azja', 'Ameryka', 'Długie'];
 
   return (
     <nav style={navStyle}>

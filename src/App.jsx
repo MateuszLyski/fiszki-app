@@ -6,11 +6,13 @@ import FlashcardContainer from './FlashcardContainer';
 import europa from './data/europe.json';
 import azja from './data/asia.json';
 import ameryka from './data/america.json';
+import dlugi from './data/dlugie.json';
 
 const allSets = {
   europa,
   azja,
-  ameryka
+  ameryka,
+  dlugi
 };
 
 function App() {
