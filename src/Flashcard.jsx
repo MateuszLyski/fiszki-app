@@ -10,7 +10,7 @@ export default function Flashcard({ question, answer, flipped = false, className
       style={{
         width: '100%',
         maxWidth: '400px',
-        height: '480px',
+        height: '400px',
         perspective: '1000px',
         cursor: 'pointer',
         position: 'absolute',

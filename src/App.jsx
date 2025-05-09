@@ -96,11 +96,14 @@ const containerStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   gap: '1.5rem',
-  margin: 0,
-  overflow: 'hidden',
+  margin: '0 auto',
+  padding: '0 1rem',
+  boxSizing: 'border-box',
+  width: '100%',
   maxWidth: '100vw',
-  padding: '1rem'
+  overflow: 'hidden'
 };
+
 
 const buttonStyle = {
   padding: '0.6rem 1.2rem',
