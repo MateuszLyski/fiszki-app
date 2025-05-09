@@ -35,7 +35,7 @@ export default function Flashcard({ question, answer, flipped = false, className
           style={{
             ...cardFaceStyle,
             transform: 'rotateY(180deg)',
-            backgroundColor: '#dff0d8'
+            backgroundColor: '#3b3b3b'
           }}
         >
           {answer}
@@ -50,7 +50,8 @@ const cardFaceStyle = {
   width: '100%',
   height: '100%',
   borderRadius: '12px',
-  backgroundColor: '#e8f5e9',
+  backgroundColor: '#2a2a2a', // ciemniejszy niż biały, ale jaśniejszy niż tło
+  color: '#ffffff',
   boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
   display: 'flex',
   justifyContent: 'center',
@@ -64,6 +65,5 @@ const cardFaceStyle = {
   overflowWrap: 'break-word',
   wordBreak: 'break-word',
   whiteSpace: 'pre-wrap',
-  color: '#000000' // ← dodaj to
 };
 
