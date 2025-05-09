@@ -15,7 +15,7 @@ export default function FlashcardContainer({ question, answer, direction }) {
   return (
     <div style={{
         width: '100%',
-        maxWidth: '400px',
+        //maxWidth: '400px',
         height: '400px',
         margin: '0 auto',
         position: 'relative', // zostaje, ale...
