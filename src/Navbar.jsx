@@ -1,5 +1,5 @@
 export default function Navbar({ currentSet, onSelect, isActive }) {
-  const sets = ['Europa', 'Azja', 'Ameryka', 'Długie'];
+  const sets = ['Europa', 'Azja', 'Ameryka', 'Długie', 'Ubezpieczenia'];
 
   return (
     <nav style={navStyle}>
@@ -36,6 +36,7 @@ export default function Navbar({ currentSet, onSelect, isActive }) {
 
 const navStyle = {
   width: '100%',
+  maxWidth: '400px', // lub 90vw, jeśli chcesz maks. 90% szerokości ekranu
   padding: '2rem 1rem',
   display: 'flex',
   flexDirection: 'column',

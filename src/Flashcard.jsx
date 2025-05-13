@@ -23,6 +23,7 @@ export default function Flashcard({ question, answer, flipped = false, className
         style={{
           position: 'relative',
           width: '100%',
+          maxWidth: '400px',
           height: '100%',
           transformStyle: 'preserve-3d',
           transition: 'transform 0.6s',
@@ -49,6 +50,7 @@ export default function Flashcard({ question, answer, flipped = false, className
 const cardFaceStyle = {
   position: 'absolute',
   width: '100%',
+  maxWidth: '400px',
   height: '100%',
   borderRadius: '12px',
   backgroundColor: '#2a2a2a', // ciemniejszy niż biały, ale jaśniejszy niż tło
@@ -61,7 +63,7 @@ const cardFaceStyle = {
   padding: '1rem',
   textAlign: 'center',
   lineHeight: '1.4',
-  fontSize: '1.25rem',
+  fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
   boxSizing: 'border-box',
   overflowWrap: 'break-word',
   wordBreak: 'break-word',

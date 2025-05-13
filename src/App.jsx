@@ -7,12 +7,14 @@ import europa from './data/europe.json';
 import azja from './data/asia.json';
 import ameryka from './data/america.json';
 import długie from './data/dlugie.json';
+import ubezpieczenia from './data/ubezpieczenia.json';
 
 const allSets = {
   europa,
   azja,
   ameryka,
-  długie
+  długie,
+  ubezpieczenia
 };
 
 function App() {
@@ -68,8 +70,8 @@ function App() {
           </div>
 
           {isFinished ? (
-            <div style={{ textAlign: 'center', color: '#ffffff', padding: '2rem' }}>
-              <h2>Gratulacje! To już wszystkie fiszki 🎉</h2>
+            <div style={congratsStyle}>
+              <h2 style={gratsTextStyle}>Gratulacje! To już wszystkie fiszki 🎉</h2>
               <button onClick={restart} style={buttonStyle}>Zacznij od początku</button>
             </div>
           ) : (
@@ -144,6 +146,7 @@ const backButtonStyle = {
 };
 const fullScreenContainerStyle = {
   width: '100vw',
+  maxWidth: '400px',
   height: '100vh',
   display: 'flex',
   flexDirection: 'column',
@@ -152,14 +155,14 @@ const fullScreenContainerStyle = {
   padding: '2vh 4vw',
   boxSizing: 'border-box',
   overflow: 'hidden',
-  gap: '1vh'
+  gap: '1 vh'
 };
 
 const topBarStyle = {
   height: '8vh',
   display: 'flex',
   alignItems: 'center',
-  gap: '1rem',
+  gap: '12%',
   color: '#ffffff',
   width: '100%',
   justifyContent: 'flex-start',
@@ -169,6 +172,7 @@ const topBarStyle = {
 const cardAreaStyle = {
   flexGrow: 1,
   width: '100%',
+  maxWidth: '400px',
   maxHeight: '64vh',
   display: 'flex',
   justifyContent: 'center',
@@ -176,12 +180,30 @@ const cardAreaStyle = {
 };
 
 const bottomBarStyle = {
-  height: '12vh',
+  height: '8vh',
   display: 'flex',
   justifyContent: 'center',
   gap: '1rem',
   width: '100%'
 };
+const congratsStyle = {
+  flexGrow: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  textAlign: 'center',
+  padding: '1rem',
+  color: '#ffffff',
+  width: '100%',
+  height: '100%'
+};
+
+const gratsTextStyle = {
+  marginBottom: '1.5rem',
+  fontSize: '1.5rem'
+};
+
 
 
 
