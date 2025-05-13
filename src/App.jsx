@@ -17,10 +17,15 @@ const allSets = {
 
 function App() {
   const [category, setCategory] = useState('europa');
+  const [isActive, setIsActive] = useState(false); // czy użytkownik wszedł w zestaw
   const [flashcards, setFlashcards] = useState(allSets[category]);
   const [index, setIndex] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [direction, setDirection] = useState('next');
+  const handleSet = (name) => {
+  setCategory(name);
+  setIsActive(true); // przełącza widok na fiszki
+  };
 
   useEffect(() => {
     setFlashcards(allSets[category]);
@@ -51,42 +56,52 @@ function App() {
 
   return (
     <>
-      <Navbar currentSet={category} onSelect={setCategory} />
-      <div style={containerStyle}>
-        {isFinished ? (
-          <>
-            <h2 style={{ color: '#ffffff' }}>Gratulacje! To już wszystkie fiszki 🎉</h2>
-            <button onClick={restart} style={buttonStyle}>Zacznij od początku</button>
-          </>
-        ) : (
-          <>
-            <div style={{ fontSize: '1.2rem', color: '#ffffff' }}>
-              {index + 1} / {flashcards.length}
-            </div>
+      {!isActive && (
+        <Navbar currentSet={category} onSelect={handleSet} isActive={isActive} />
+      )}
 
-            <FlashcardContainer
-              key={`${category}-${index}`}
-              question={flashcards[index].question}
-              answer={flashcards[index].answer}
-              direction={direction}
-            />
+      {isActive && (
+        <div style={containerStyle}>
+          {isFinished ? (
+            <>
+              <h2 style={{ color: '#ffffff' }}>Gratulacje! To już wszystkie fiszki 🎉</h2>
+              <button onClick={restart} style={buttonStyle}>Zacznij od początku</button>
+            </>
+          ) : (
+            <>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: '#ffffff' }}>
+                <button onClick={() => setIsActive(false)} style={backButtonStyle}>← Wróć</button>
+                {index + 1} / {flashcards.length}
+              </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
-              <button onClick={prevCard} disabled={index === 0}
-                style={{ ...buttonStyle, opacity: index === 0 ? 0.5 : 1 }}>
-                Poprzednia
-              </button>
-              {index === flashcards.length - 1 ? (
-                <button onClick={finish} style={buttonStyle}>Zakończ</button>
-              ) : (
-                <button onClick={nextCard} style={buttonStyle}>Następna</button>
-              )}
-            </div>
-          </>
-        )}
-      </div>
+              <FlashcardContainer
+                key={`${category}-${index}`}
+                question={flashcards[index].question}
+                answer={flashcards[index].answer}
+                direction={direction}
+              />
+
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
+                <button
+                  onClick={prevCard}
+                  disabled={index === 0}
+                  style={{ ...buttonStyle, opacity: index === 0 ? 0.5 : 1 }}
+                >
+                  Poprzednia
+                </button>
+                {index === flashcards.length - 1 ? (
+                  <button onClick={finish} style={buttonStyle}>Zakończ</button>
+                ) : (
+                  <button onClick={nextCard} style={buttonStyle}>Następna</button>
+                )}
+              </div>
+            </>
+          )}
+        </div>
+      )}
     </>
   );
+
 }
 
 const containerStyle = {
@@ -112,6 +127,14 @@ const buttonStyle = {
   color: '#000000',
   border: '1px solid #999999',
   borderRadius: '8px',
+  cursor: 'pointer'
+};
+
+const backButtonStyle = {
+  background: 'transparent',
+  color: '#ffffff',
+  border: 'none',
+  fontSize: '1rem',
   cursor: 'pointer'
 };
 
