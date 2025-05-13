@@ -116,3 +116,22 @@ html, body {
   height: 100vh;
   overflow: hidden;
 }
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: #ffffff;       /* było #f0f0f0 — teraz 100% jasna karta */
+  --button-bg: #e0e0e0;     /* szare przyciski nadal */
+}
+
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --card-bg: #2a2a2a;
+  --button-bg: #333333;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}

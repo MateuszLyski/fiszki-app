@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import FlashcardContainer from './FlashcardContainer';
 
+
 // statyczne importy danych
 import europa from './data/europe.json';
 import azja from './data/asia.json';
@@ -36,6 +37,11 @@ function App() {
     setDirection('next');
   }, [category]);
 
+  const toggleTheme = () => {
+    const isDark = document.body.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    };
+
   const nextCard = () => {
     if (index < flashcards.length - 1) {
       setDirection('next');
@@ -59,7 +65,7 @@ function App() {
   return (
     <div className={isActive ? 'fullscreen-locked' : 'scrollable-menu'}>
       {!isActive && (
-        <Navbar currentSet={category} onSelect={handleSet} isActive={isActive} />
+        <Navbar currentSet={category} onSelect={handleSet} isActive={isActive} onToggleTheme={toggleTheme} />
       )}
 
       {isActive && (
@@ -139,7 +145,7 @@ const buttonStyle = {
 
 const backButtonStyle = {
   background: 'transparent',
-  color: '#ffffff',
+  color: 'var(--text-color)',
   border: 'none',
   fontSize: '1rem',
   cursor: 'pointer'
@@ -163,7 +169,7 @@ const topBarStyle = {
   display: 'flex',
   alignItems: 'center',
   gap: '12%',
-  color: '#ffffff',
+  color: 'var(--text-color)',
   width: '100%',
   justifyContent: 'flex-start',
   fontSize: '1rem'

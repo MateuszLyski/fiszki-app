@@ -37,7 +37,8 @@ export default function Flashcard({ question, answer, flipped = false, className
           style={{
             ...cardFaceStyle,
             transform: 'rotateY(180deg)',
-            backgroundColor: '#3b3b3b'
+            backgroundColor: 'var(--card-bg)',
+            color: 'var(--text-color)'
           }}
         >
           {answer}
@@ -53,8 +54,8 @@ const cardFaceStyle = {
   maxWidth: '400px',
   height: '100%',
   borderRadius: '12px',
-  backgroundColor: '#2a2a2a', // ciemniejszy niż biały, ale jaśniejszy niż tło
-  color: '#ffffff',
+  backgroundColor: 'var(--card-bg)',
+  color: 'var(--text-color)',
   boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
   display: 'flex',
   justifyContent: 'center',
