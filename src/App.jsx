@@ -139,10 +139,12 @@ const fullScreenContainerStyle = {
   flexDirection: 'column',
   justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '1rem',
+  padding: '0.5rem 0.75rem',
   boxSizing: 'border-box',
-  overflow: 'hidden'
+  overflow: 'hidden',
+  gap: '0.25rem'
 };
+
 
 const topBarStyle = {
   display: 'flex',
@@ -158,8 +160,10 @@ const cardAreaStyle = {
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  maxHeight: '60%' // ograniczenie wysokości fiszki
 };
+
 
 const bottomBarStyle = {
   display: 'flex',
