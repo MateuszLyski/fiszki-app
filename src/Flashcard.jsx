@@ -63,7 +63,7 @@ const cardFaceStyle = {
   padding: '1rem',
   textAlign: 'center',
   lineHeight: '1.4',
-  fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
+  fontSize: '1.25rem',
   boxSizing: 'border-box',
   overflowWrap: 'break-word',
   wordBreak: 'break-word',
