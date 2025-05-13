@@ -8,7 +8,7 @@ export default function Flashcard({ question, answer, flipped = false, className
       onClick={() => setIsFlipped(!isFlipped)}
       className={className}
       style={{
-        width: '90%',
+        width: '100%',
         maxWidth: '100%',
         height: '100%',
         maxHeight: '100%',

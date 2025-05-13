@@ -67,29 +67,39 @@ function App() {
             <span>{index + 1} / {flashcards.length}</span>
           </div>
 
-          <div style={cardAreaStyle}>
-            <FlashcardContainer
-              key={`${category}-${index}`}
-              question={flashcards[index].question}
-              answer={flashcards[index].answer}
-              direction={direction}
-            />
-          </div>
+          {isFinished ? (
+            <div style={{ textAlign: 'center', color: '#ffffff', padding: '2rem' }}>
+              <h2>Gratulacje! To już wszystkie fiszki 🎉</h2>
+              <button onClick={restart} style={buttonStyle}>Zacznij od początku</button>
+            </div>
+          ) : (
+            <>
+              <div style={cardAreaStyle}>
+                <FlashcardContainer
+                  key={`${category}-${index}`}
+                  question={flashcards[index].question}
+                  answer={flashcards[index].answer}
+                  direction={direction}
+                />
+              </div>
 
-          <div style={bottomBarStyle}>
-            <button
-              onClick={prevCard}
-              disabled={index === 0}
-              style={{ ...buttonStyle, opacity: index === 0 ? 0.5 : 1 }}
-            >
-              Poprzednia
-            </button>
-            {index === flashcards.length - 1 ? (
-              <button onClick={finish} style={buttonStyle}>Zakończ</button>
-            ) : (
-              <button onClick={nextCard} style={buttonStyle}>Następna</button>
-            )}
-          </div>
+              <div style={bottomBarStyle}>
+                <button
+                  onClick={prevCard}
+                  disabled={index === 0}
+                  style={{ ...buttonStyle, opacity: index === 0 ? 0.5 : 1 }}
+                >
+                  Poprzednia
+                </button>
+                {index === flashcards.length - 1 ? (
+                  <button onClick={finish} style={buttonStyle}>Zakończ</button>
+                ) : (
+                  <button onClick={nextCard} style={buttonStyle}>Następna</button>
+                )}
+              </div>
+            </>
+          )}
+
         </div>
       )}
 
@@ -99,20 +109,20 @@ function App() {
 
 }
 
-const containerStyle = {
-  minHeight: 'calc(100vh - 80px)',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  gap: '1.5rem',
-  margin: '0 auto',
-  padding: '0 1rem',
-  boxSizing: 'border-box',
-  width: '100%',
-  maxWidth: '100vw',
-  overflow: 'hidden'
-};
+// const containerStyle = {
+//   minHeight: 'calc(100vh - 80px)',
+//   display: 'flex',
+//   flexDirection: 'column',
+//   justifyContent: 'center',
+//   alignItems: 'center',
+//   gap: '1.5rem',
+//   margin: '0 auto',
+//   padding: '0 1rem',
+//   boxSizing: 'border-box',
+//   width: '100%',
+//   maxWidth: '100vw',
+//   overflow: 'hidden'
+// };
 
 
 const buttonStyle = {
