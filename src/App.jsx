@@ -55,52 +55,47 @@ function App() {
   };
 
   return (
-    <>
+    <div className={isActive ? 'fullscreen-locked' : 'scrollable-menu'}>
       {!isActive && (
         <Navbar currentSet={category} onSelect={handleSet} isActive={isActive} />
       )}
 
       {isActive && (
-        <div style={containerStyle}>
-          {isFinished ? (
-            <>
-              <h2 style={{ color: '#ffffff' }}>Gratulacje! To już wszystkie fiszki 🎉</h2>
-              <button onClick={restart} style={buttonStyle}>Zacznij od początku</button>
-            </>
-          ) : (
-            <>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: '#ffffff' }}>
-                <button onClick={() => setIsActive(false)} style={backButtonStyle}>← Wróć</button>
-                {index + 1} / {flashcards.length}
-              </div>
+        <div style={fullScreenContainerStyle}>
+          <div style={topBarStyle}>
+            <button onClick={() => setIsActive(false)} style={backButtonStyle}>← Wróć</button>
+            <span>{index + 1} / {flashcards.length}</span>
+          </div>
 
-              <FlashcardContainer
-                key={`${category}-${index}`}
-                question={flashcards[index].question}
-                answer={flashcards[index].answer}
-                direction={direction}
-              />
+          <div style={cardAreaStyle}>
+            <FlashcardContainer
+              key={`${category}-${index}`}
+              question={flashcards[index].question}
+              answer={flashcards[index].answer}
+              direction={direction}
+            />
+          </div>
 
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
-                <button
-                  onClick={prevCard}
-                  disabled={index === 0}
-                  style={{ ...buttonStyle, opacity: index === 0 ? 0.5 : 1 }}
-                >
-                  Poprzednia
-                </button>
-                {index === flashcards.length - 1 ? (
-                  <button onClick={finish} style={buttonStyle}>Zakończ</button>
-                ) : (
-                  <button onClick={nextCard} style={buttonStyle}>Następna</button>
-                )}
-              </div>
-            </>
-          )}
+          <div style={bottomBarStyle}>
+            <button
+              onClick={prevCard}
+              disabled={index === 0}
+              style={{ ...buttonStyle, opacity: index === 0 ? 0.5 : 1 }}
+            >
+              Poprzednia
+            </button>
+            {index === flashcards.length - 1 ? (
+              <button onClick={finish} style={buttonStyle}>Zakończ</button>
+            ) : (
+              <button onClick={nextCard} style={buttonStyle}>Następna</button>
+            )}
+          </div>
         </div>
       )}
-    </>
+
+    </div>
   );
+
 
 }
 
@@ -137,5 +132,42 @@ const backButtonStyle = {
   fontSize: '1rem',
   cursor: 'pointer'
 };
+const fullScreenContainerStyle = {
+  width: '100vw',
+  height: '100vh',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '1rem',
+  boxSizing: 'border-box',
+  overflow: 'hidden'
+};
+
+const topBarStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '1rem',
+  color: '#ffffff',
+  width: '100%',
+  justifyContent: 'flex-start'
+};
+
+const cardAreaStyle = {
+  flexGrow: 1,
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+};
+
+const bottomBarStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '1rem',
+  width: '100%',
+  marginTop: '1rem'
+};
+
 
 export default App;

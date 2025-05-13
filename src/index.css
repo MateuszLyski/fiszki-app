@@ -105,3 +105,16 @@ html, body {
 * {
   box-sizing: border-box;
 }
+
+.scrollable-menu {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.fullscreen-locked {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
