@@ -8,9 +8,10 @@ export default function Flashcard({ question, answer, flipped = false, className
       onClick={() => setIsFlipped(!isFlipped)}
       className={className}
       style={{
-        width: '100%',
-        maxWidth: '400px',
-        height: '400px',
+        width: '90%',
+        maxWidth: '100%',
+        height: '100%',
+        maxHeight: '100%',
         perspective: '1000px',
         cursor: 'pointer',
         position: 'absolute',

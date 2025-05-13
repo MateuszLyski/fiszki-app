@@ -139,39 +139,40 @@ const fullScreenContainerStyle = {
   flexDirection: 'column',
   justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '0.5rem 0.75rem',
+  padding: '2vh 4vw',
   boxSizing: 'border-box',
   overflow: 'hidden',
-  gap: '0.25rem'
+  gap: '1vh'
 };
 
-
 const topBarStyle = {
+  height: '8vh',
   display: 'flex',
   alignItems: 'center',
   gap: '1rem',
   color: '#ffffff',
   width: '100%',
-  justifyContent: 'flex-start'
+  justifyContent: 'flex-start',
+  fontSize: '1rem'
 };
 
 const cardAreaStyle = {
   flexGrow: 1,
   width: '100%',
+  maxHeight: '64vh',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
-  maxHeight: '60%' // ograniczenie wysokości fiszki
+  alignItems: 'center'
 };
 
-
 const bottomBarStyle = {
+  height: '12vh',
   display: 'flex',
   justifyContent: 'center',
   gap: '1rem',
-  width: '100%',
-  marginTop: '1rem'
+  width: '100%'
 };
+
 
 
 export default App;
